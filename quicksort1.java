@@ -32,7 +32,7 @@ public class quicksort1 {
     }
     public static void main(String[] args) {
         int arr[] = {6,3,8,2,5};
-        int k = 0;
+        int k = 2;
         int result = findelement(arr, 0, arr.length-1, k);
         System.out.println(result);
     }
