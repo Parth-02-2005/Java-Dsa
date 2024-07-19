@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class arraylist {
     public static void main(String[] args) {
@@ -27,5 +29,22 @@ public class arraylist {
 
         list.set(0, 0);
         System.out.println(list);
+
+        // remove element
+        list.remove(3);
+
+        // count size of array list 
+        int size = list.size();
+        System.out.println(size);
+
+        //loops in array list 
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+        System.out.println();
+
+        //sorting
+        Collections.sort(list);
+
     }
 }
