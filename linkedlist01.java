@@ -39,6 +39,32 @@ public class linkedlist01 {
         currNode.next = newNode;   
     }
 
+    public void addmiddle(int index, String dataString){
+        if (index > size || index < 0) {
+            System.out.println("Invalid index");
+            return;
+        }
+        size++;
+        Node nwNode = new Node(dataString);
+        if (headNode == null || index == 0) {
+            nwNode.next = headNode;
+            headNode = nwNode;
+            return;
+        }
+
+        Node curNode = headNode;
+        for (int i = 1; i < size; i++) {
+            if (i == index) {
+                Node newnNode = curNode.next; // make a newnode 
+                curNode.next = nwNode; // current node points to new node
+                nwNode.next = newnNode; // new node points to nextnode
+                break;
+            }
+            curNode = curNode.next;
+        }
+
+    }
+
     public void display(){
         Node currNode = headNode;
         while (currNode != null) {
@@ -48,6 +74,8 @@ public class linkedlist01 {
         System.out.println("null");
     }
 
+    
+
     public static void main(String[] args) {
         linkedlist01 linkedlist01 = new linkedlist01();
         linkedlist01.addfirst("parth");
@@ -55,7 +83,9 @@ public class linkedlist01 {
         linkedlist01.addlast("Gandhi");
         linkedlist01.display();
         System.out.println(linkedlist01.size);
-    
+        linkedlist01.addmiddle(1, "Mahendra");
+        linkedlist01.display();
+        System.out.println(linkedlist01.size);
     }
     
 }
